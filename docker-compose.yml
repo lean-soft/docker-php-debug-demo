@@ -1,0 +1,10 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+    image: php-debug:v9
+    volumes:
+     - ./app:/var/www/html
+    ports:
+     - "80:80"
