@@ -1,0 +1,299 @@
+* html body { behavior:url("include/csshover3.htc"); }
+* html img { behavior:url("include/iepngfix.htc"); }
+
+#forum_page form, #login-panel form
+{
+	display: inline;
+}
+#forum_page table
+{
+	width:100%; 
+	border-spacing:0px; 
+	border-collapse:collapse;
+}
+#forum_page img 
+{
+	border:0px;
+	vertical-align:middle;
+}
+#forum_page fieldset
+{
+	margin:5px;
+}
+
+#forum_page div.subnav
+{
+	margin:0px;
+	text-align:left;
+	padding:0px;
+}
+#forum_page div.subnav td
+{
+	padding:0px;
+}
+
+#forum_page div.breadcrumbs
+{
+	display:inline;
+}
+
+#login-panel 
+{
+	display: none;
+	position: absolute;
+	z-index: 100;
+	height: 90px;
+	width: 400px;
+	text-align: center;
+}
+#login-panel td
+{
+	padding:3px;
+	text-align:left;
+}
+#login-panel input#name, input#passwd
+{
+	width:110px;
+}
+
+#notice, div.notice 
+{
+	color: #222;
+	background: #FFFACD url(../images/bg_notice.png) 8px center no-repeat; 
+	padding: 10px;
+	padding-left:50px;
+	border: 1px solid #FFC125;
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:left;
+}
+#confirm, div.confirm 
+{
+	color: #222;
+	background: #F0F6F0 url(../images/bg_confirm.png) 8px center no-repeat; 
+	padding: 10px;
+	padding-left:50px;
+	border: 1px solid #5AD45B;
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:left;
+}
+#error, div.error
+{
+	color: #222;
+	background: #FFE8E3 url(../images/bg_error.png) 8px center no-repeat; 
+	padding: 10px;
+	padding-left:50px;
+	border: 1px solid #F94C3F;
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:left;
+}
+div.info
+{
+	color: #222;
+	background:#ECF2FA url(../images/bg_info.png) 8px center no-repeat; 
+	padding: 10px;
+	padding-left:50px;
+	border: 1px solid #95B2D9;
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:left;
+}
+
+#content, div.content 
+{
+	clear:both; 
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+
+#forum_page .searchword  {color: #222; background-color: #ffd; border: 1px dotted #ffd;}
+#forum_page .searchword0 {color: #222; background-color: #ff0; border: 1px dotted #ff0;}
+#forum_page .searchword1 {color: #222; background-color: #0f0; border: 1px dotted #0f0;}
+#forum_page .searchword2 {color: #222; background-color: #0ff; border: 1px dotted #0ff;}
+#forum_page .searchword3 {color: #222; background-color: #fbb; border: 1px dotted #fbb;}
+#forum_page .searchword4 {color: #222; background-color: #dfd; border: 1px dotted #dfd;}
+#forum_page .searchword5 {color: #222; background-color: #faf; border: 1px dotted #faf;}
+#forum_page .searchword6 {color: #222; background-color: #ccc; border: 1px dotted #ccc;}
+
+#forum_page .rating{padding-right:0px;padding-left:0px;background:url('../images/rating.gif') repeat-x right top;padding-bottom:0px;margin:0px;padding-top:0px;list-style-type:none;position:relative;height:33px;width:100px;display:block;}
+#forum_page .rating li{padding-right:0px;padding-left:0px;float:left;padding-bottom:0px;margin:0px;text-indent:-90000px;padding-top:0px}
+#forum_page .rating li a{padding-right:0px;display:block;padding-left:0px;z-index:20;padding-bottom:0px;width:20px;text-indent:-9000px;padding-top:0px;position:absolute;height:30px;text-decoration:none;outline:none}
+#forum_page .rating li a:hover{z-index:2;background:url('../images/rating.gif') left center;left:0px}
+#forum_page .rating a.r1-voted{left:0px}
+#forum_page .rating a.r1-voted:hover{width:20px}
+#forum_page .rating a.r2-voted{left:20px}
+#forum_page .rating a.r2-voted:hover{width:40px}
+#forum_page .rating a.r3-voted{left:40px}
+#forum_page .rating a.r3-voted:hover{width:60px}
+#forum_page .rating a.r4-voted{left:60px}
+#forum_page .rating a.r4-voted:hover{width:80px}
+#forum_page .rating a.r5-voted{left:80px}
+#forum_page .rating a.r5-voted:hover{width:100px}
+#forum_page .rating li.current-rating{display:block;z-index:1;background:url('../images/rating.gif') left bottom;text-indent:-9000px;position:absolute;height:30px;left:0px}
+#forum_page .rating-view {padding:0px;background:url('../images/rating_small.gif') repeat-x right top;margin:0px;list-style-type:none;position:relative;height:14px;width:70px;display:block;}
+#forum_page .rating-view li{z-index:1;background:url('../images/rating_small.gif') left bottom;text-indent:-9000px;position:relative;height:14px;left:0px;display:block;}
+
+
+#forum_page div.dropdown 
+{
+	width: auto;
+	padding: 0;
+}
+#forum_page div.dropdown ul 
+{
+	margin: 0; padding: 0;
+	text-align: left;
+}
+#forum_page div.dropdown ul li
+{ 
+	list-style: none;
+	float: left;  
+	position: relative;
+	margin: 0;
+	padding: 0;
+	cursor:pointer;
+}
+#forum_page div.dropdown ul li ul 
+{
+	margin: 0; 
+	padding: 0;
+	position: absolute;
+	display: none;
+	background: #FFF;
+	width:auto;
+}
+#forum_page div.dropdown ul li:hover ul 
+{
+	display: block;
+}
+#forum_page div.dropdown ul li ul li 
+{
+	float: none;
+	display: block;
+}
+#forum_page div.dropdown ul a, #forum_page div.dropdown ul span.item
+{
+	display: block;
+	width:auto;
+	padding: 6px 5px;
+	text-decoration:none;
+}
+#forum_page div.dropdown span.text 
+{
+	vertical-align:middle;
+}
+#forum_page div.dropdown ul ul li a, #forum_page div.dropdown ul ul li span.item
+{
+	height:auto;
+	width:160px;
+}
+
+#forum_page ul.post_buttons
+{
+	margin: 0;
+	margin-top:5px;
+	padding: 5px;
+	text-align:right;
+}
+#forum_page ul.post_buttons li
+{
+	list-style: none;
+	display:inline;
+	margin: 1px;
+	padding: 0;
+	cursor:pointer;
+}
+#forum_page ul.post_buttons a
+{
+	width:auto;
+	padding: 5px;
+	text-decoration:none;
+}
+	#forum_page ul.post_buttons span
+	{
+		vertical-align:middle;
+	}
+
+#forum_page ul.subnav
+{
+	margin:0;
+	padding:0;
+}
+#forum_page ul.subnav li
+{
+	list-style:none;
+}
+#forum_page ul.subnav a
+{
+	width:auto;
+	display:block;
+	padding:5px;
+	text-decoration:none;
+}
+
+#forum_page p.buttons
+{
+	text-align:center;
+	margin-top:20px;
+}
+	#forum_page p.buttons a
+	{
+		padding:4px 7px;
+		margin-left:5px;
+		margin-right:5px;
+		background:#FFF;
+		border:1px solid #DDD;
+		text-decoration:none;
+		font-weight:bold;
+	}
+	#forum_page p.buttons a:hover
+	{
+		background:#DDD;
+		border:1px solid #BBB;
+	}
+
+#loadingbox
+{
+	position: absolute; 
+	left: 0px; 
+	top: 0px;
+	width:100%;
+	height:100%;
+	z-index:1000;
+	align:center; 
+	vertical-align:middle; 
+}
+body > div#loadingbox
+{
+	position: fixed; 
+}
+div.premium
+{
+	-moz-opacity: 0.9; 
+	filter:alpha(opacity=90); 
+	opacity: 0.9; 
+	background-color:#555555;
+}
+#loadingbox table
+{
+	position:relative; 
+	top:40%; 
+	width:250px; 
+	height:125px; 
+	background: #fff url(../images/loading.gif) no-repeat center 30px; 
+	border:1px solid #222;
+}
+#loadingbox td
+{
+	vertical-align:bottom; 
+	text-align:center;
+	font-weight:bold;
+	font-color:#222;
+	padding:10px;
+}
+
+
+

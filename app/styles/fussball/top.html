@@ -1,0 +1,129 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<script language="JavaScript">
+      // Ziel-Datum in MEZ
+      var jahr=2016, monat=6, tag=10, stunde=00, minute=00, sekunde=00;
+      var zielDatum=new Date(jahr,monat-1,tag,stunde,minute,sekunde);
+
+      function countdown() {
+        startDatum=new Date(); // Aktuelles Datum
+
+        // Countdown berechnen und anzeigen, bis Ziel-Datum erreicht ist
+        if(startDatum<=zielDatum)  {
+
+          var jahre=0, monate=0, tage=0, stunden=0, minuten=0, sekunden=0;
+
+          /* Allgemeines Vorgehen:
+           * Zunächst werden die vollen Jahre gezählt
+           * und anschließend der Start- und Ziel-Monat auf den jeweiligen 1. gesetzt.
+           * Nun werden erst die vollen Monate vom 1. zum 1. des Start- bzw. Ziel-Monats
+           * berechnet und danach die tatsächlichen Monatstage wieder mit einbezogen.
+           * Dieses Vorgehen vermeidet Probleme mit den verschiedenen Monatslängen.
+           * Was übrig bleibt, wird in Tagen, Stunden, Minuten und Sekunden ausgedrückt.*/
+
+          // Jahre
+          if(startDatum<zielDatum) {
+            while(startDatum<zielDatum) {
+              if(startDatum.setFullYear(startDatum.getFullYear()+1)<=zielDatum) jahre++;
+            }
+            startDatum.setFullYear(startDatum.getFullYear()-1);
+          }
+
+          // Restliche Tage zum Monatsende ermitteln
+          var restTage=0;
+          var m=startDatum.getMonth();
+          if(m==1-1|| m==3-1||m==5-1||m==7-1||m==8-1||m==10-1||m==12-1)
+              restTage=31-startDatum.getDate();
+          else if(m==4-1|| m==6-1||m==9-1||m==11-1) restTage=30-startDatum.getDate();
+          else if(m==2-1) {
+            if(startDatum.getFullYear()%4==0 && (startDatum.getFullYear()%100!=0
+                || startDatum.getFullYear()%400==0))
+                    restTage=29-startDatum.getDate(); // Schaltjahr
+            else restTage=28-startDatum.getDate();
+          }
+
+          // Start- und Ziel-Tag merken und auf 1 setzen
+          var startTag=startDatum.getDate();
+          var zielTag=zielDatum.getDate();
+          startDatum.setDate(1);
+          zielDatum.setDate(1);
+
+          // Monate
+          if(startDatum<zielDatum) {
+            while(startDatum<zielDatum) {
+              if(startDatum.setMonth(startDatum.getMonth()+1)<=zielDatum) monate++;
+            }
+            startDatum.setMonth(startDatum.getMonth()-1);
+          }
+
+          // Tatsächlichen Start- und Ziel-Tag berücksichtigen
+          if(startDatum.getMonth()==zielDatum.getMonth()) {
+            if(startTag<=zielTag) startDatum.setDate(startTag);
+            else {
+              monate--;
+              tage=restTage+1;
+            }
+          }
+          else {
+            startDatum.setMonth(startDatum.getMonth()+1);
+            if(startTag>=zielTag) tage=restTage+1;
+            else {
+              monate++;
+              startDatum.setDate(startTag);
+            }
+          }
+          zielDatum.setDate(zielTag);
+
+          // Tage
+          restTage=Math.floor((zielDatum-startDatum)/(24*60*60*1000));
+          startDatum.setTime(startDatum.getTime()+restTage*24*60*60*1000);
+          tage+=restTage;
+
+          // Stunden
+          stunden=Math.floor((zielDatum-startDatum)/(60*60*1000));
+          startDatum.setTime(startDatum.getTime()+stunden*60*60*1000);
+
+          // Minuten
+          minuten=Math.floor((zielDatum-startDatum)/(60*1000));
+          startDatum.setTime(startDatum.getTime()+minuten*60*1000);
+
+          // Sekunden
+          sekunden=Math.floor((zielDatum-startDatum)/1000);
+
+          // Anzeige formatieren
+          (jahre!=1)?jahre=jahre+" Jahre,  ":jahre=jahre+" Jahr,  ";
+          (monate!=1)?monate=monate+" Monate,  ":monate=monate+" Monat,  ";
+          (tage!=1)?tage=tage+" Tage,  ":tage=tage+" Tag,  ";
+          (stunden!=1)?stunden=stunden+" Stunden,  ":stunden=stunden+" Stunde,  ";
+          (minuten!=1)?minuten=minuten+" Minuten  und  ":minuten=minuten+" Minute  und  ";
+          if(sekunden<10) sekunden="0"+sekunden;
+          (sekunden!=1)?sekunden=sekunden+" Sekunden":sekunden=sekunden+" Sekunde";
+
+          document.countdownform.countdowninput.value=
+              jahre+monate+tage+stunden+minuten+sekunden;
+
+          setTimeout('countdown()',200);
+        }
+        // Anderenfalls alles auf Null setzen
+        else document.countdownform.countdowninput.value=
+            "0 Jahre,  0 Monate,  0 Tage,  0 Stunden,  0 Minuten  und  00 Sekunden";
+      }
+      window.onload = countdown;
+    </script>
+
+
+
+<center><div id="forum_page">
+
+
+	<table style="width:100%;">
+	<tr>
+            <td style="width:auto;"><h1>{_HEADLINE_}</h1></td>
+	</tr></table>
+
+	<div id="content">
+                     <table><tr><td class="a"><form name="countdownform"> Noch: <b><input size="67" border=no name="countdowninput" style="background-color:#FFFFFF;border-width:0;font-family:Verdana,Arial;font-size:8pt;color:#222222" onfocus="if(this.blur)this.blur()"></b><br>bis zur Fussball Europameisterschaft 2016 in Frankreich</form></td></tr></table>
+		<table class="main">
+		<tr><td colspan="2" class="g" style="text-align:center;text-weight:normal;">{_NAVIGATION_}</td></tr>
+		<tr><td class="w">{_USER_ONLINE_}</td><td class="w" style="text-align:right;">{_USER_LOGIN_}</td></tr>
+		</table>
+	</div>
