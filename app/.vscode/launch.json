@@ -7,7 +7,7 @@
             "request": "launch",
             "port": 9111,
             "serverSourceRoot": "/var/www/html",
-            "localSourceRoot": "${workspaceRoot}/app"
+            "localSourceRoot": "${workspaceRoot}"
         },
         {
             "name": "Launch currently open script",
